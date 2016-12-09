@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="LJZParkingInfoView" customModule="LJZProject" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="407" height="100"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6mq-tQ-VyA" userLabel="title">
+                    <rect key="frame" x="20" y="5" width="367" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="CDa-IQ-BNl"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WDU-yf-MPK">
+                    <rect key="frame" x="20" y="25" width="90" height="70"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="70" id="LUk-Ja-E1z"/>
+                        <constraint firstAttribute="width" constant="90" id="b2i-jf-JyH"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hpq-E9-1j3" userLabel="status">
+                    <rect key="frame" x="115" y="25" width="272" height="15"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="15" id="hXd-cK-qYO"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fbN-ii-bti">
+                    <rect key="frame" x="115" y="40" width="272" height="15"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q1f-qh-ZPf">
+                    <rect key="frame" x="115" y="55" width="272" height="15"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e1f-9I-vPs">
+                    <rect key="frame" x="115" y="72" width="272" height="28"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" title="导航">
+                        <color key="titleColor" red="1" green="0.71468472309999997" blue="0.011350116699999999" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="btnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="Gu9-jL-V9S"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <gestureRecognizers/>
+            <constraints>
+                <constraint firstItem="Q1f-qh-ZPf" firstAttribute="leading" secondItem="fbN-ii-bti" secondAttribute="leading" id="14F-mG-v3D"/>
+                <constraint firstItem="WDU-yf-MPK" firstAttribute="top" secondItem="6mq-tQ-VyA" secondAttribute="bottom" id="1D4-L0-cxC"/>
+                <constraint firstItem="fbN-ii-bti" firstAttribute="height" secondItem="hpq-E9-1j3" secondAttribute="height" id="1GW-Fr-Kam"/>
+                <constraint firstItem="e1f-9I-vPs" firstAttribute="top" secondItem="Q1f-qh-ZPf" secondAttribute="bottom" constant="2" id="1oY-Az-xQb"/>
+                <constraint firstAttribute="trailing" secondItem="6mq-tQ-VyA" secondAttribute="trailing" constant="20" id="2ei-78-x8V"/>
+                <constraint firstAttribute="bottom" secondItem="e1f-9I-vPs" secondAttribute="bottom" id="7T3-Zw-ELh"/>
+                <constraint firstItem="6mq-tQ-VyA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="HqT-4M-Dgd"/>
+                <constraint firstItem="Q1f-qh-ZPf" firstAttribute="width" secondItem="fbN-ii-bti" secondAttribute="width" id="JvZ-uJ-jFo"/>
+                <constraint firstItem="6mq-tQ-VyA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="Kk5-GE-s2q"/>
+                <constraint firstItem="hpq-E9-1j3" firstAttribute="trailing" secondItem="6mq-tQ-VyA" secondAttribute="trailing" id="PyI-J9-9rL"/>
+                <constraint firstItem="WDU-yf-MPK" firstAttribute="leading" secondItem="6mq-tQ-VyA" secondAttribute="leading" id="QbW-oE-Qad"/>
+                <constraint firstItem="Q1f-qh-ZPf" firstAttribute="height" secondItem="fbN-ii-bti" secondAttribute="height" id="Tse-YX-m2s"/>
+                <constraint firstItem="fbN-ii-bti" firstAttribute="top" secondItem="hpq-E9-1j3" secondAttribute="bottom" id="UCi-M2-OSg"/>
+                <constraint firstItem="fbN-ii-bti" firstAttribute="leading" secondItem="hpq-E9-1j3" secondAttribute="leading" id="UDd-M4-eXZ"/>
+                <constraint firstItem="e1f-9I-vPs" firstAttribute="leading" secondItem="WDU-yf-MPK" secondAttribute="trailing" constant="5" id="WBd-uM-Tr2"/>
+                <constraint firstAttribute="trailing" secondItem="e1f-9I-vPs" secondAttribute="trailing" constant="20" id="Xng-NQ-gDV"/>
+                <constraint firstItem="fbN-ii-bti" firstAttribute="width" secondItem="hpq-E9-1j3" secondAttribute="width" id="hzu-RR-rww"/>
+                <constraint firstItem="Q1f-qh-ZPf" firstAttribute="top" secondItem="fbN-ii-bti" secondAttribute="bottom" id="mrq-Wk-2VT"/>
+                <constraint firstItem="hpq-E9-1j3" firstAttribute="top" secondItem="6mq-tQ-VyA" secondAttribute="bottom" id="tEB-nF-Pxf"/>
+                <constraint firstItem="hpq-E9-1j3" firstAttribute="leading" secondItem="WDU-yf-MPK" secondAttribute="trailing" constant="5" id="vMF-Ue-7uZ"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="addressL" destination="Q1f-qh-ZPf" id="dib-YO-rh1"/>
+                <outlet property="imgv" destination="WDU-yf-MPK" id="n0C-9V-3gd"/>
+                <outlet property="navBtn" destination="e1f-9I-vPs" id="8bC-Gv-BvL"/>
+                <outlet property="priceL" destination="fbN-ii-bti" id="4U0-qz-rEE"/>
+                <outlet property="statusL" destination="hpq-E9-1j3" id="2jX-IL-53n"/>
+                <outlet property="titleL" destination="6mq-tQ-VyA" id="cjm-MS-F0S"/>
+                <outletCollection property="gestureRecognizers" destination="mnm-gq-p8r" appends="YES" id="tA0-uh-TTV"/>
+            </connections>
+            <point key="canvasLocation" x="-323" y="-160"/>
+        </view>
+        <tapGestureRecognizer id="mnm-gq-p8r">
+            <connections>
+                <action selector="tap:" destination="iN0-l3-epB" id="gev-b5-7uc"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+</document>
