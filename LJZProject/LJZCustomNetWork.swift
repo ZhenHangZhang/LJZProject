@@ -99,7 +99,7 @@ class LJZCustomNetWork:NSObject{
 
     func getrequest(paramDic:[String:String]){
         
-        let url = URL(string:"http://b2b.ezparking.com.cn/rtpi-service/parking")
+        let url = URL(string:"https://b2b.ezparking.com.cn/rtpi-service/parking")
         var request = URLRequest(url: url!)
         
         let list  = NSMutableArray()

@@ -66,6 +66,8 @@
 		92898EFE1DFA8F3D00E4EB97 /* LJZDetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92898EFD1DFA8F3D00E4EB97 /* LJZDetailHeaderView.xib */; };
 		92898F011DFA95F000E4EB97 /* LJZDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92898EFF1DFA95F000E4EB97 /* LJZDetailTableViewCell.swift */; };
 		92898F021DFA95F000E4EB97 /* LJZDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92898F001DFA95F000E4EB97 /* LJZDetailTableViewCell.xib */; };
+		92ADC5CE1DFE6F4200CAAE95 /* LJZSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ADC5CD1DFE6F4200CAAE95 /* LJZSearchModel.swift */; };
+		92ADC5D01DFE73B600CAAE95 /* LJZRtpiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ADC5CF1DFE73B600CAAE95 /* LJZRtpiModel.swift */; };
 		92D786F31DF93B8E00DEFBD8 /* LJZRecommView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D786F21DF93B8E00DEFBD8 /* LJZRecommView.swift */; };
 		92D786F51DF9498100DEFBD8 /* LJZCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D786F41DF9498100DEFBD8 /* LJZCollectionViewCell.swift */; };
 		92F4FFE41DF6B88D001060EF /* LJZCustomNetWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F4FFE31DF6B88D001060EF /* LJZCustomNetWork.swift */; };
@@ -137,6 +139,8 @@
 		92898EFD1DFA8F3D00E4EB97 /* LJZDetailHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LJZDetailHeaderView.xib; sourceTree = "<group>"; };
 		92898EFF1DFA95F000E4EB97 /* LJZDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LJZDetailTableViewCell.swift; sourceTree = "<group>"; };
 		92898F001DFA95F000E4EB97 /* LJZDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LJZDetailTableViewCell.xib; sourceTree = "<group>"; };
+		92ADC5CD1DFE6F4200CAAE95 /* LJZSearchModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LJZSearchModel.swift; sourceTree = "<group>"; };
+		92ADC5CF1DFE73B600CAAE95 /* LJZRtpiModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LJZRtpiModel.swift; sourceTree = "<group>"; };
 		92D786F21DF93B8E00DEFBD8 /* LJZRecommView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LJZRecommView.swift; sourceTree = "<group>"; };
 		92D786F41DF9498100DEFBD8 /* LJZCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LJZCollectionViewCell.swift; sourceTree = "<group>"; };
 		92F4FFE31DF6B88D001060EF /* LJZCustomNetWork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LJZCustomNetWork.swift; sourceTree = "<group>"; };
@@ -209,6 +213,8 @@
 			children = (
 				925760631DF1662500CC65C0 /* LJZParkingModel.swift */,
 				92442D121DF8113C007699F0 /* LJZParkInfoModel.swift */,
+				92ADC5CD1DFE6F4200CAAE95 /* LJZSearchModel.swift */,
+				92ADC5CF1DFE73B600CAAE95 /* LJZRtpiModel.swift */,
 			);
 			name = M;
 			sourceTree = "<group>";
@@ -536,9 +542,11 @@
 				9269FF8E1DF108530039DEF3 /* RAMItemAnimationProtocol.swift in Sources */,
 				92D786F51DF9498100DEFBD8 /* LJZCollectionViewCell.swift in Sources */,
 				9269FF5D1DF033A20039DEF3 /* ViewController.swift in Sources */,
+				92ADC5D01DFE73B600CAAE95 /* LJZRtpiModel.swift in Sources */,
 				9269FF8C1DF108530039DEF3 /* RAMAnimatedTabBarController.swift in Sources */,
 				9269FF5B1DF033A20039DEF3 /* AppDelegate.swift in Sources */,
 				9269FF761DF107A80039DEF3 /* LJZMap.m in Sources */,
+				92ADC5CE1DFE6F4200CAAE95 /* LJZSearchModel.swift in Sources */,
 				92898F011DFA95F000E4EB97 /* LJZDetailTableViewCell.swift in Sources */,
 				927F69F01DF7D048004A404E /* LJZDataManager.swift in Sources */,
 				9269FFBC1DF11DF40039DEF3 /* LJZNavViewController.swift in Sources */,

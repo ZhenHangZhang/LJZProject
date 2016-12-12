@@ -10,7 +10,7 @@ import UIKit
 import MJExtension
 import Alamofire
 import SVProgressHUD
-
+import MapKit
 
 fileprivate let idenf = "justone"
 
@@ -49,8 +49,9 @@ class LJZHomeViewController: LJZBaseViewController {
         initBtn()
         initnav()
         view.addSubview(infoView)
-        infoView.block = {(model) in
+        infoView.block = {[weak self](model) in
             ZHZDLog("导航\(model)")
+           self?.navigationClick(model: model)
         }
         recommedView.tBlock = {[weak self] in
             self?.tabBarController?.tabBar.isHidden = false
@@ -75,7 +76,8 @@ class LJZHomeViewController: LJZBaseViewController {
     }
     @objc private func nav(notifi:Notification){
         ZHZDLog("导航")
-    
+        let  model = notifi.object as!LJZParkInfoModel
+        navigationClick(model: model)
     }
     
 }
@@ -83,6 +85,65 @@ class LJZHomeViewController: LJZBaseViewController {
 // MARK: - UI
 extension LJZHomeViewController{
 
+    fileprivate func navigationClick(model:LJZParkInfoModel){
+    
+        var navListArr = ["苹果地图"]
+        
+        let maPschemeArr = ["comgooglemaps://","iosamap://navi","baidumap://map/"]
+        
+        for scheme in maPschemeArr.enumerated() {
+            if UIApplication.shared.canOpenURL(URL(string: scheme.element)!) {
+                if scheme.offset == 0 {
+                    navListArr.append("谷歌地图")
+                }else if scheme.offset == 1{
+                    navListArr.append("高德地图")
+                }else if scheme.offset == 2{
+                    navListArr.append("百度地图")
+                }
+            }
+        }
+        let alertVC = UIAlertController(title: "提示", message: "选择", preferredStyle: .actionSheet)
+        for name in navListArr {
+        let action = UIAlertAction(title: name, style: .default, handler: { (action) in
+        ZHZDLog(name)
+        self.navMap(name: name, model: model)
+        })
+          alertVC.addAction(action)
+        }
+        let canAction = UIAlertAction(title: "取消", style: .cancel, handler: { (action) in
+         })
+        alertVC.addAction(canAction)
+        present(alertVC, animated: true, completion: nil)
+    }
+
+    private func navMap(name:String,model:LJZParkInfoModel){
+    
+        var strCoord :String?
+        if name == "百度地图" {
+            strCoord = model.coordinateBaidu
+        }else{
+            strCoord = model.coordinateAmap
+        }
+        let coorArr = strCoord?.components(separatedBy: ",")
+        if coorArr?.count == 2 {
+            let coord = CLLocationCoordinate2DMake(Double((coorArr?.last)!)!, Double((coorArr?.first)!)!)
+            if name == "苹果地图" {
+                let toLocation = MKMapItem(placemark: MKPlacemark(coordinate: coord, addressDictionary: nil))
+                MKMapItem.openMaps(with: [MKMapItem.forCurrentLocation(),toLocation], launchOptions: NSDictionary.init(objects: NSArray.init(objects: MKLaunchOptionsDirectionsModeDriving,NSNumber.init(booleanLiteral: true)) as! [Any], forKeys: NSArray.init(objects: MKLaunchOptionsDirectionsModeKey,MKLaunchOptionsShowsTrafficKey) as! [NSCopying]) as? [String : Any])
+            }else if (name == "谷歌地图"){
+                let amapUrl = NSURL.init(string: NSString.localizedStringWithFormat("comgooglemaps://?saddr=%.8f,%.8f&daddr=%@,%@&directionsmode=transit",(userCoor?.latitude)!,(userCoor?.longitude)!,(coorArr?.last)!,(coorArr?.first)!) as String)
+                UIApplication.shared.openURL(amapUrl as! URL)
+            }else if (name == "百度地图"){
+                let baiduUrl = NSURL.init(string: NSString.localizedStringWithFormat("baidumap://map/direction?origin=%.8f,%.8f&destination=%@,%@&&mode=driving",(userCoor?.latitude)!,(userCoor?.longitude)!,(coorArr?.last)!,(coorArr?.first)!) as String)
+                UIApplication.shared.openURL(baiduUrl as! URL)
+            }else if (name == "高德地图"){
+                let amapUrl = NSURL.init(string: NSString.localizedStringWithFormat("iosamap://navi?sourceApplication=broker&backScheme=openbroker2&poiname=%@&poiid=BGVIS&lat=%@&lon=%@&dev=0&style=2","",(coorArr?.last)!,(coorArr?.first)!) as String)
+                UIApplication.shared.openURL(amapUrl as! URL)
+            }
+        }
+
+    }
+    
     fileprivate func initBtn(){
         let rightBtn = UIButton(type: .custom)
         rightBtn.frame = CGRect(x: SCREEN_W - 50, y: 100, width: 40, height: 40)

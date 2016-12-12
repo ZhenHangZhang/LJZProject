@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow()
         window?.backgroundColor = UIColor.white
         AMapServices.shared().apiKey = MAP_KEY
+        AMapServices.shared().enableHTTPS = true
         //设置全局的键盘处理,不显示工具条
         IQKeyboardManager.shared().isEnabled = true
         IQKeyboardManager.shared().isEnableAutoToolbar = false

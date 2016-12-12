@@ -79,7 +79,7 @@ class LJZParkingInfoView: UIView {
     func customGCDImg(name:String,ID:String) {
         DispatchQueue.global().async {
             // 子线程下载数据
-            let urlStr = "http://pic.ezparking.com.cn/rtpi-service/parking?key=P01890EQ52678RTX&type=photo&id=\(ID)&file=\(name)&thumbnail=1"
+            let urlStr = "https://pic.ezparking.com.cn/rtpi-service/parking?key=P01890EQ52678RTX&type=photo&id=\(ID)&file=\(name)&thumbnail=1"
             
             let url = URL(string:urlStr)
             let data: Data?

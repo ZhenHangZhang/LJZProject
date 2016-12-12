@@ -20,7 +20,7 @@ class LJZDetailViewController: UITableViewController{
         let v = nib.instantiate(withOwner: nil, options: nil)[0] as! LJZDetailHeaderView
         DispatchQueue.global().async {
             // 子线程下载数据
-            let urlStr = NSString.localizedStringWithFormat("http://pic.ezparking.com.cn/rtpi-service/parking?key=P01890EQ52678RTX&type=photo&id=%@&file=%@", (self.model?.id)!,(self.model?.photo)!)
+            let urlStr = NSString.localizedStringWithFormat("https://pic.ezparking.com.cn/rtpi-service/parking?key=P01890EQ52678RTX&type=photo&id=%@&file=%@", (self.model?.id)!,(self.model?.photo)!)
             let url = URL(string:urlStr as String)
             let data: Data?
             do {
