@@ -366,6 +366,17 @@ extension LJZHomeViewController{
         dict["key"] = dic["key"]
         dict["type"] = dic["type"]
         dict["bounds"] = strBounds as AnyObject?
+        
+        LJZCustomNetWork().getWithPath(path: "https://b2b.ezparking.com.cn/rtpi-service/parking", paras: dict, success: {(res) in
+        
+        }, failure: {(error) in
+        
+        
+        })
+        
+        
+        
+        
         LJZNetworkManager.shared.requestData(parameters: dict, competopm: {[weak self] result in
             if result?.isKind(of: NSError.self) == true{
             }else{

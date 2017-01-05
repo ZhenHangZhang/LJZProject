@@ -30,6 +30,7 @@ class LJZNetworkManager: NSObject {
                 //当请求后response是我们自定义的，这个变量用于接受服务器响应的信息
                 //使用switch判断请求是否成功，也就是response的result
                 switch response.result {
+                    
                 case .success(let vaule):
                     //当响应成功是，使用临时变量value接受服务器返回的信息并判断是否为[String: AnyObject]类型 如果是那么将其传给其定义方法中的success
                 if let value111 = vaule as? Array<Any> {
@@ -46,7 +47,11 @@ class LJZNetworkManager: NSObject {
     func postRequest(urlString : String, params : [String : Any], success : @escaping (_ response : [String : AnyObject])->(), failture : @escaping (_ error : Error)->()) {
         
         Alamofire.request(urlString, method: HTTPMethod.post, parameters: params).responseJSON { (response) in
+            
+        ZHZDLog("\(response.request)")
+            
             switch response.result{
+                
             case .success:
                 if let value = response.result.value as? [String: AnyObject] {
                     success(value)
